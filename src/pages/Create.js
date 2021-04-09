@@ -87,7 +87,7 @@ const Create = () => {
                     onChange={(e) => setTitle(e.target.value)}
                     className={classes.field}
                     label="Note Title"
-                    variant="filled"
+                    variant="outlined"
                     fullWidth
                     required //just adds the asterix
                     error={titleError} //this prop just adds a 'red styling' to the TextField to indicate an error, it is set to either true or false
@@ -97,7 +97,7 @@ const Create = () => {
                     label="Note Details"
                     fullWidth
                     required
-                    variant="filled"
+                    variant="outlined"
                     className={classes.field}
                     multiline //creates an html 'textarea' input field
                     rows={4} //specifies the size of the 'textarea' or multiline input field
