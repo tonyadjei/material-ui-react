@@ -27,9 +27,6 @@ import { useHistory } from 'react-router'; //don't forget, react hooks begin wit
 // })
 
 const useStyles = makeStyles({ //makeStyles returns to us a hook, the hook subsequently gives us the object. NB: react hooks must begin with the word 'use'
-    btn: {
-        borderRadius: 0
-    },
     field: {
         marginTop: 20,
         marginBottom: 20,
@@ -73,9 +70,8 @@ const Create = () => {
     return ( 
         <Container className="Create">
             <Typography
-                className={classes.title}
                 variant="h6" //still looks like an h6
-                color="primary"
+                color="secondary"
                 component="h2" //but I actually want it to be an h2 element
                 gutterBottom
             >
@@ -115,9 +111,8 @@ const Create = () => {
                 </FormControl>
 
                 <Button
-                    className={classes.btn}
                     type="submit" //if you are using a button inside a form, please set type="submit"
-                    color="primary"
+                    color="secondary"
                     variant="contained"
                     endIcon={<KeyboardArrowRightIcon />}
                     disableElevation
