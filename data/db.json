@@ -1,0 +1,16 @@
+{
+  "notes": [
+    {
+      "title": "Yoshi's birthday bash",
+      "details": "Lorem ipsum is simply dummy text of the printing and typesetting industry",
+      "category": "reminders",
+      "id": 1
+    },
+    {
+      "title": "Complete my React.js training",
+      "details": "Lorem ipsum is simply dummy text of the printing and typesetting industry",
+      "category": "work",
+      "id": 2
+    }
+  ]
+}
