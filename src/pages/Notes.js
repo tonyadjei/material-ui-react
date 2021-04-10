@@ -3,6 +3,7 @@ import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import { Container } from "@material-ui/core";
 import NoteCard from '../components/NoteCard';
+import Masonry from 'react-masonry-css';
 
 
 const Notes = () => {
@@ -28,7 +29,11 @@ const Notes = () => {
     }
 
 
-
+    const breakpoints = {
+        default: 3,
+        1100: 2,
+        700: 1
+    }
 
     return ( 
         <Container className="Notes">
@@ -46,14 +51,25 @@ const Notes = () => {
                     <Paper>4</Paper>
                 </Grid>
             </Grid> */}
-
+{/* 
             <Grid container spacing={3}>
                 {notes.map(note => (
                     <Grid item key={note.id} xs={12} md={6} lg={4}>
                         <NoteCard note={note} handleDelete={handleDelete} />
                     </Grid> 
                 ))}
-            </Grid>
+            </Grid> */}
+            <Masonry
+                breakpointCols={breakpoints}
+                className="my-masonry-grid"
+                columnClassName="my-masonry-grid_column"
+            >
+                {notes.map(note => (
+                    <div key={note.id}>
+                        <NoteCard note={note} handleDelete={handleDelete} />
+                    </div> 
+                ))}
+            </Masonry>
         </Container>
      );
 }

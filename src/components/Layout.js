@@ -7,6 +7,10 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import { AddCircleOutlineOutlined, SubjectOutlined } from "@material-ui/icons";
 import { useHistory, useLocation } from "react-router";
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import { format } from 'date-fns';
+import Avatar from '@material-ui/core/Avatar';
 
 
 
@@ -35,6 +39,19 @@ const useStyles = makeStyles((theme) => { //the makeStyles hook can take a funct
         },
         title: {
             padding: theme.spacing(2)
+        },
+        appbar: {
+            width: `calc(100% - ${drawerWidth}px)`
+        },
+        toolbar: theme.mixins.toolbar,
+        // in the above line, we set our 'toolbar' class to have the value of a mixin;
+        // mixins are collections of styles used by a material ui component. In this case, we are getting those styles that the <Toolbar> component uses 
+        // and we are applying all of its styles to our 'toolbar' class so that it would have all of its styles, including the height style and value.
+        date: {
+            flexGrow: 1
+        },
+        avatar: {
+            marginLeft: theme.spacing(2)
         }
     }
 })
@@ -61,6 +78,18 @@ const Layout = ({ children }) => {
     return (
         <div className={classes.root}>
             {/* app bar */}
+            <AppBar className={classes.appbar} elevation={0}>
+                <Toolbar>
+                    <Typography className={classes.date}>
+                        Today is the {format(new Date(), 'do MMMM Y')}
+                    </Typography>
+                    <Typography>
+                        Julliet
+                    </Typography>
+                    <Avatar src="/snowGirl.png" className={classes.avatar} />
+                </Toolbar>
+            </AppBar>
+
             {/* side drawer */}
             <Drawer
                 className={classes.drawer}
@@ -94,6 +123,7 @@ const Layout = ({ children }) => {
             </Drawer>
 
             <div className={classes.page}>
+                <div className={classes.toolbar} ></div>
                 {children}
             </div>
             
